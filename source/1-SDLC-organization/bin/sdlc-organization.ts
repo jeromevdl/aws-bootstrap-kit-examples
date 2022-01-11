@@ -31,13 +31,16 @@ const forceEmailVerification = app.node.tryGetContext("force_email_verification"
 const pipelineDeployableRegions = app.node.tryGetContext("pipeline_deployable_regions");
 const nestedOU = [
     {
-        name: 'SharedServices',
+        name: 'Shared',
         accounts: [
             {
                 name: 'CICD',
                 type: AccountType.CICD,
-                email: 'jvdl+org-cicd@amazon.com',
                 reuseAccountId: '820163106649'
+            },
+            {
+                name: 'Security',
+                email: 'jvdl+org-sec@amazon.com',
             }
         ]
     },
@@ -55,7 +58,6 @@ const nestedOU = [
                 stageName: 'staging',
                 stageOrder: 1,
                 hostedServices: ['ALL'],
-                email: 'jvdl+org-staging@amazon.com',
                 reuseAccountId: '338575324958'
             }
         ]

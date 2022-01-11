@@ -36,7 +36,8 @@ const nestedOU = [
             {
                 name: 'CICD',
                 type: AccountType.CICD,
-                email: 'jvdl+org-cicd@amazon.com'
+                email: 'jvdl+org-cicd@amazon.com',
+                reuseAccountId: '820163106649'
             }
         ]
     },

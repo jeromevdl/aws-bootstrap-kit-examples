@@ -55,7 +55,8 @@ const nestedOU = [
                 stageName: 'staging',
                 stageOrder: 1,
                 hostedServices: ['ALL'],
-                email: 'jvdl+org-staging@amazon.com'
+                email: 'jvdl+org-staging@amazon.com',
+                reuseAccountId: '338575324958'
             }
         ]
     },

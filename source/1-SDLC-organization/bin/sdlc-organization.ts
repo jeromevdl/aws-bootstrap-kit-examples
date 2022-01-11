@@ -40,6 +40,7 @@ const nestedOU = [
             },
             {
                 name: 'Security',
+                type: AccountType.PLAYGROUND,
                 email: 'jvdl+org-sec@amazon.com',
             }
         ]

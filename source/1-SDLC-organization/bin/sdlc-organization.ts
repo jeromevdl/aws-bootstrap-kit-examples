@@ -50,7 +50,9 @@ const nestedOU = [
         accounts: [
             {
                 name: 'Dev',
-                type: AccountType.PLAYGROUND,
+                type: AccountType.STAGE,
+                stageName: 'dev',
+                stageOrder: 0,
                 reuseAccountId: '038688679310'
             },
             {

@@ -36,12 +36,12 @@ const nestedOU = [
             {
                 name: 'CICD',
                 type: AccountType.CICD,
-                reuseAccountId: '820163106649'
+                existingAccountId: '820163106649'
             },
             {
                 name: 'Security',
                 type: AccountType.PLAYGROUND,
-                email: 'jvdl+org-sec@amazon.com',
+                existingAccountId: '433856934137'
             }
         ]
     },
@@ -53,7 +53,7 @@ const nestedOU = [
                 type: AccountType.STAGE,
                 stageName: 'dev',
                 stageOrder: 0,
-                reuseAccountId: '038688679310'
+                existingAccountId: '038688679310'
             },
             {
                 name: 'Staging',
@@ -61,20 +61,15 @@ const nestedOU = [
                 stageName: 'staging',
                 stageOrder: 1,
                 hostedServices: ['ALL'],
-                reuseAccountId: '338575324958'
-            }
-        ]
-    },
-    {
-        name: 'Prod',
-        accounts: [
+                existingAccountId: '338575324958'
+            },
             {
                 name: 'Prod',
                 type: AccountType.STAGE,
                 stageName: 'prod',
                 stageOrder: 2,
                 hostedServices: ['ALL'],
-                reuseAccountId: '676712036918'
+                existingAccountId: '676712036918'
             }
         ]
     }

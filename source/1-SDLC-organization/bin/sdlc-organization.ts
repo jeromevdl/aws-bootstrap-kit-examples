@@ -62,11 +62,7 @@ const nestedOU = [
                 stageOrder: 1,
                 hostedServices: ['ALL'],
                 existingAccountId: '338575324958'
-            }
-        ]
-    }, {
-        name: 'Prod',
-        accounts: [
+            },
             {
                 name: 'Prod',
                 type: AccountType.STAGE,
@@ -76,7 +72,7 @@ const nestedOU = [
                 existingAccountId: '676712036918'
             }
         ]
-    }
+    },
 ];
 
 

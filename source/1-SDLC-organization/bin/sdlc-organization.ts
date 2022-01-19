@@ -20,7 +20,8 @@ import {
     AWSBootstrapKitLandingZonePipelineStack,
     AWSBootstrapKitLandingZoneStage
 } from '../lib/cicd-stack';
-import {AccountType} from 'aws-bootstrap-kit';
+import {AccountType, OUSpec} from 'aws-bootstrap-kit';
+import { RemovalPolicy } from 'aws-cdk-lib';
 
 const app = new cdk.App();
 
@@ -29,7 +30,7 @@ const rootHostedZoneDNSName = app.node.tryGetContext("domain_name");
 const thirdPartyProviderDNSUsed = app.node.tryGetContext("third_party_provider_dns_used");
 const forceEmailVerification = app.node.tryGetContext("force_email_verification");
 const pipelineDeployableRegions = app.node.tryGetContext("pipeline_deployable_regions");
-const nestedOU = [
+const nestedOU:OUSpec[] = [
     {
         name: 'Shared',
         accounts: [
@@ -53,7 +54,8 @@ const nestedOU = [
                 type: AccountType.STAGE,
                 stageName: 'dev',
                 stageOrder: 0,
-                existingAccountId: '038688679310'
+                existingAccountId: '038688679310',
+                removalPolicy: RemovalPolicy.DESTROY
             },
             {
                 name: 'Staging',
@@ -62,7 +64,12 @@ const nestedOU = [
                 stageOrder: 1,
                 hostedServices: ['ALL'],
                 existingAccountId: '338575324958'
-            },
+            }
+        ]
+    },
+    {
+        name: 'Prod',
+        accounts: [
             {
                 name: 'Prod',
                 type: AccountType.STAGE,
@@ -72,7 +79,7 @@ const nestedOU = [
                 existingAccountId: '676712036918'
             }
         ]
-    },
+    }
 ];
 
 
